@@ -1,0 +1,29 @@
+<%- include("header") -%>
+  <body>
+    <div class="box" id="heading">
+      <h1> <%= the_day %> </h1>
+    </div>
+
+    <div class="box">
+      <ul>
+        <% newItems.forEach(function(it){ %>
+          <form class="sep-items" action="/delete" method="post">
+            <div class="item">
+              <input type="checkbox" name="checkbox" value="<%= it._id %>" onChange="this.form.submit()">
+              <p><%= it.name %></p>
+            </div>
+            <input type="hidden" name="lname" value="<%= the_day %>"></input>
+          </form>
+        <% }); %>
+      </ul>
+
+      <form class="item" action="/" method="post">
+        <input type="text" name="newItem" placeholder="Add A New Item" autocomplete="off">
+        <button type="submit" name="list" value="<%= String(the_day) %>">+</button>
+      </form>
+
+    </div>
+
+  </body>
+
+<%- include("footer") -%>
