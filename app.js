@@ -7,7 +7,7 @@ const app = express();
 const _ = require("lodash");
 const date = require(__dirname + "/date.js");
 
-mongoose.connect("mongodb+srv://sid:ironman123@mylistcluster.q2fv1.mongodb.net/todolistDB", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://<username>:<password>@mylistcluster.q2fv1.mongodb.net/todolistDB", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public")); //to point to location of all static files to be served in the course of the webapp execution
 app.set('view engine', 'ejs'); //to recognise the ejs templates.
