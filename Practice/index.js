@@ -12,7 +12,7 @@ app.get("/", function(req, res){
 });
 
 app.get("/climate", function(req, res){
-  const url = "https://api.openweathermap.org/data/2.5/weather?q=Maharashtra&appid=3283b79454e0a31e2b12652520928b1d&units=metric";
+  const url = "opeweatherAPI";
   https.get(url, function(response){
     console.log(response.statusCode);
     response.on("data", function(data){
